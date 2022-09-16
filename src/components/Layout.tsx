@@ -13,7 +13,7 @@ type LayoutProps = {
 
 export default function Layout({ title, keywords, description, children }: LayoutProps) {
   return (
-    <div className="flex flex-col h-screen">
+    <div className="flex flex-col min-h-[98vh] px-6 mx-auto max-w-7xl">
       <Head>
         <title>{title}</title>
         <meta name="description" content={description} />
@@ -24,7 +24,7 @@ export default function Layout({ title, keywords, description, children }: Layou
       </Head>
 
       <Header />
-      <main className="container flex-grow bg-red-100 sm:px-6">{children}</main>
+      <main className="flex-grow">{children}</main>
       <Footer />
     </div>
   );

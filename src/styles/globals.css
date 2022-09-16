@@ -1,3 +1,25 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap");
+
+body {
+  font-family: "Libre Baskerville", serif;
+}
+
+a,
+button {
+  cursor: pointer;
+}
+
+button:focus,
+input:focus,
+textarea:focus {
+  outline: none;
+}
+
+input,
+textarea {
+  background: transparent;
+}
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
