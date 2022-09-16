@@ -74,22 +74,22 @@ export default function Post() {
           </div>
         </div>
 
-        <div className="relative z-10 max-w-full mt-44 xl:max-w-sm h-fit">
-          <div className="-z-10 text-[8rem] md:text-[10rem] font-bold text-gray-100  absolute -top-32 xl:right-0">
+        <div className="relative z-10 max-w-full mt-44 md:mt-32 xl:max-w-sm h-fit">
+          <div className="-z-10 text-[8rem] md:text-[10rem] font-bold text-gray-100  absolute -top-24 lg:-top-32 xl:right-0">
             {year}
           </div>
           {/* xxl:col-[17/25] col-[1/25] md:col-[6/20] lg:col-[6/20] lg:row-start-2 row-start-1  */}
           <h6 className=" md:px-5  text-[#7d7d7d] ">{description}</h6>
           <a
             href={source}
-            className="block text-xs tracking-wide font-bold text-[#7d7d7d] underline uppercase pt-6 lg:pt-20 pl-4 hover:text-black"
+            className="block text-xs tracking-wide font-bold text-[#7d7d7d] underline uppercase pt-8 xl:pt-20 md:pl-4 hover:text-black"
             target="blank">
             go to source
           </a>
         </div>
       </motion.article>
       <div
-        className="flex items-center justify-between  min-h-[96px] py-6 border border-t-[2px] mt-8"
+        className="flex items-center justify-between  h-24  py-6 border border-t-[2px] mt-8"
         style={{ borderImageSource: `linear-gradient(to right, #000000 ${percent}%, #E5E5E5 1%)` }}>
         <div>
           <h3 className="pb-1">{name}</h3>
