@@ -79,7 +79,7 @@ export default function Post() {
             {year}
           </div>
           {/* xxl:col-[17/25] col-[1/25] md:col-[6/20] lg:col-[6/20] lg:row-start-2 row-start-1  */}
-          <h6 className=" md:px-5  text-[#7d7d7d] ">{description}</h6>
+          <h6 className=" md:px-5 text-[1rem]  text-[#7d7d7d] ">{description}</h6>
           <a
             href={source}
             className="block text-xs tracking-wide font-bold text-[#7d7d7d] underline uppercase pt-8 xl:pt-20 md:pl-4 hover:text-black"
