@@ -9,7 +9,7 @@ const SlideFooter = () => {
     const dispatch = useDispatch();
 
     return (
-        <>
+        <div>
             <ProgressBar />
             <div className="flex items-center justify-between mt-6">
                 <div className="space-y-2">
@@ -21,7 +21,7 @@ const SlideFooter = () => {
                     <ArrowNext onClick={() => dispatch(paginate(1))} />
                 </div>
             </div>
-        </>
+        </div>
     );
 };
 

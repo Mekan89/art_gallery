@@ -23,7 +23,7 @@ export default function Slide({ setShow }: { setShow: (state: boolean) => void }
                 duration: 0.8,
                 ease: "easeInOut",
             }}
-            className="flex flex-col py-12 overflow-hidden lg:px-4 xl:px-0 xl:flex-row xl:justify-between">
+            className="flex flex-col flex-grow h-auto lg:h-[63rem] py-12 overflow-hidden lg:px-4 xl:px-0 xl:flex-row xl:justify-between">
             <div className="flex">
                 <div>
                     <motion.div
