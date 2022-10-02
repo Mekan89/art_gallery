@@ -3,29 +3,34 @@ import { motion } from "framer-motion";
 
 import ViewIcon from "components/ViewIcon";
 import { useSelector } from "react-redux";
-import { currentSlide } from "store/slidesSlice";
-
-const INTERVAL = 6000;
+import { currentSlide, currentSlideIndex, slidesDirection } from "store/slidesSlice";
+import { slideAnimation } from "utils/animations";
 
 export default function Slide({ setShow }: { setShow: (state: boolean) => void }) {
     const { name, artist, images, year, description, source } = useSelector(currentSlide);
-
-    const variants = {
-        inital: { opacity: 0, x: 1000 },
-        animate: { opacity: 1, x: 0, transition: { delay: 0.2, duration: 1.3, type: "tween" } },
-        exit: { opacity: 0, x: 1000, transition: { duration: 0.5 } },
-    };
+    const currentIndex = useSelector(currentSlideIndex);
+    const direction = useSelector(slidesDirection);
 
     return (
         <motion.article
-            variants={variants}
-            initial="inital"
-            animate="animate"
+            key={currentIndex}
+            custom={direction}
+            variants={slideAnimation}
+            initial="enter"
+            animate="center"
             exit="exit"
+            transition={{
+                duration: 0.8,
+                ease: "easeInOut",
+            }}
             className="flex flex-col py-12 overflow-hidden lg:px-4 xl:px-0 xl:flex-row xl:justify-between">
             <div className="flex">
                 <div>
-                    <div className="relative ">
+                    <motion.div
+                        initial={{ opacity: 0 }}
+                        animate={{ opacity: 1 }}
+                        transition={{ duration: 1.5 }}
+                        className="relative ">
                         <img className="w-[400px] md:w-[500px]" src={images.hero.large} alt="" key={name} />
                         <div className="z-10 max-w-sm pb-8 bg-white sm:absolute sm:pl-16 sm:-right-2/4 sm:top-0">
                             <h1 className="pb-4 text-[2rem] md:text-[3rem] leading-tight font-bold">{name}</h1>
@@ -48,7 +53,7 @@ export default function Slide({ setShow }: { setShow: (state: boolean) => void }
                             height={128}
                             key={artist.name}
                         />
-                    </div>
+                    </motion.div>
                 </div>
             </div>
 

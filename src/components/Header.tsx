@@ -17,7 +17,7 @@ export default function Header() {
             <Logo />
             <div
                 onClick={handleClick}
-                className="cursor-pointer text-end text-sm text-opacity-40 hover:text-black/100 hover:font-bold tracking-[2px] uppercase">
+                className="cursor-pointer text-end text-sm text-black/60 hover:text-black hover:font-bold tracking-[2px] uppercase">
                 {isSlideshowPlaying ? "Stop Slideshow" : "Start Slideshow"}
             </div>
         </header>

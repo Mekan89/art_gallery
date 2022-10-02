@@ -13,7 +13,7 @@ type LayoutProps = {
 
 export default function Layout({ title, keywords, description, children }: LayoutProps) {
     return (
-        <div className="flex flex-col min-h-[98vh] px-6 mx-auto max-w-7xl">
+        <div className="flex flex-col min-h-[98vh] px-6 mx-auto max-w-7xl overflow-hidden">
             <Head>
                 <title>{title}</title>
                 <meta name="description" content={description} />

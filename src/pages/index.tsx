@@ -13,7 +13,7 @@ const Home: NextPage = () => {
         exit: { opacity: 0, transition: { duration: 0.5 } },
     };
     return (
-        <Layout title="next_tw_starter">
+        <Layout title="Galleria">
             <motion.section variants={variants} exit="exit" initial="inital" animate="animate">
                 <ResponsiveMasonry columnsCountBreakPoints={{ 300: 1, 570: 2, 810: 3, 1100: 4 }}>
                     <Masonry gutter={30}>
