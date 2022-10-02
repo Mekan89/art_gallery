@@ -16,7 +16,7 @@ const Home: NextPage = () => {
         <Layout title="next_tw_starter">
             <motion.section variants={variants} exit="exit" initial="inital" animate="animate">
                 <ResponsiveMasonry columnsCountBreakPoints={{ 300: 1, 570: 2, 810: 3, 1100: 4 }}>
-                    <Masonry gutter={40}>
+                    <Masonry gutter={30}>
                         {data.map((el, index) => (
                             <Card key={index} id={index} {...el} />
                         ))}

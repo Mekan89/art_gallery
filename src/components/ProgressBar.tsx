@@ -10,8 +10,8 @@ export default function ProgressBar() {
     const progressBarWidth = Math.round(((currentIndex + 1) / slidesLength) * 100);
 
     return (
-        <div className="relative flex items-center justify-between  h-24  py-6 border-t-[2px] mt-8">
-            <div className='absolute after:content-[""] bg-black h-full style={{ width: `${progressBarWidth}%` }}' />
+        <div className="relative h-[2px] mt-8 bg-gray-100">
+            <div className="absolute h-full bg-black after:content" style={{ width: `${progressBarWidth}%` }} />
         </div>
     );
 }

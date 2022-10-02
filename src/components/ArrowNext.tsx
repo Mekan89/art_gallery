@@ -1,4 +1,4 @@
-export default function ArrowNext({ onClick }: { onClick: () => number }) {
+export default function ArrowNext({ onClick }: { onClick: () => { payload: number } }) {
     return (
         <svg
             width="26"

@@ -1,6 +1,12 @@
-export default function ArrowBack() {
+export default function ArrowBack({ onClick }: { onClick: () => { payload: number } }) {
     return (
-        <svg width="26" height="24" viewBox="0 0 26 24" xmlns="http://www.w3.org/2000/svg" className="cursor-pointer">
+        <svg
+            width="26"
+            height="24"
+            viewBox="0 0 26 24"
+            xmlns="http://www.w3.org/2000/svg"
+            className="cursor-pointer"
+            onClick={onClick}>
             <g
                 stroke="currentColor"
                 fill="currentColor"

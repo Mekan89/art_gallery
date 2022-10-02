@@ -10,11 +10,9 @@ export default function Card({ name, artist, images, id }: Gallery): JSX.Element
         <Link href="/slideshow">
             <div
                 onClick={() => dispatch(setCurrentSlide(id ? id : 0))}
-                className="relative transition-opacity duration-300 transform cursor-pointer hover:opacity-50"
-                // onClick={e => setSlideId(state => ({ ...state, currentSlideIndex: id! }))}
-            >
+                className="relative transition-opacity duration-300 transform cursor-pointer hover:opacity-50">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src={images.thumbnail} alt={name} className="relative top-0 left-0 w-full h-full" />
+                <img src={images.thumbnail} alt={name} className="relative top-0 left-0 " />
 
                 <div className="absolute bottom-0 z-10 w-full px-6 pb-6 text-white">
                     <h1 className="mb-2 text-2xl font-bold">{name}</h1>

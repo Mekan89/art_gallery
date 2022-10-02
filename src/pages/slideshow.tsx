@@ -11,18 +11,19 @@ import { currentSlideIndex, isPlaying, paginate } from "store/slidesSlice";
 const INTERVAL = 6000;
 
 export default function Slideshow() {
-    const slideRef = useRef<number | undefined>();
+    const [show, setShow] = useState(false);
+    const id = useRef<number | undefined>();
     const dispatch = useDispatch();
     const isSlideshowPlaying = useSelector(isPlaying);
     const currentIndex = useSelector(currentSlideIndex);
 
-    const clearInterval = () => window.clearInterval(id);
+    const clearInterval = () => window.clearInterval(id.current);
 
     const startInterval = useCallback(() => {
-        slideRef.current = window.setInterval(() => {
+        id.current = window.setInterval(() => {
             dispatch(paginate(1));
         }, INTERVAL);
-    }, [dispatch, slideRef]);
+    }, [dispatch]);
 
     useEffect(() => {
         if (isSlideshowPlaying) {
@@ -34,13 +35,11 @@ export default function Slideshow() {
         return clearInterval;
     }, [currentIndex, isSlideshowPlaying, startInterval, dispatch]);
 
-    const [show, setShow] = useState(false);
-
     return (
         <Layout>
-            <Slide />
+            <Slide setShow={setShow} />
             <SlideFooter />
-            {show && <Modal />}
+            {show && <Modal setShow={setShow} />}
         </Layout>
     );
 }
