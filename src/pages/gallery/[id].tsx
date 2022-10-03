@@ -110,8 +110,8 @@ export default function GalleryId() {
                     </a>
                 </div>
             </motion.article>
-            <SlideFooter name={name} artist={artist.name} id={`id`} />
-            {show && <Modal image={images.gallery} setShow={setShow} />}
+            <SlideFooter />
+            {show && <Modal setShow={setShow} />}
         </Layout>
     );
 }

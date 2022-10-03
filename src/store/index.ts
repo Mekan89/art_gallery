@@ -1,5 +1,4 @@
 import { configureStore } from "@reduxjs/toolkit";
-
 import slidesReducer from "./slidesSlice";
 
 const store = configureStore({

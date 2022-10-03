@@ -8,7 +8,7 @@ import { useCallback, useEffect, useRef, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { currentSlideIndex, isPlaying, paginate } from "store/slidesSlice";
 
-const INTERVAL = 6000;
+const INTERVAL = 4000;
 
 export default function Slideshow() {
     const [show, setShow] = useState(false);
@@ -36,7 +36,7 @@ export default function Slideshow() {
     }, [currentIndex, isSlideshowPlaying, startInterval, dispatch]);
 
     return (
-        <Layout>
+        <Layout title="Galleria">
             <Slide setShow={setShow} />
             <SlideFooter />
             {show && <Modal setShow={setShow} />}

@@ -4,44 +4,44 @@ import { Gallery } from "helper/interface";
 import { RootState } from "store";
 
 type SlidesSlice = {
-  slides: Gallery[];
-  direction: number;
-  currentSlideIndex: number;
-  isPlaying: boolean;
+    slides: Gallery[];
+    direction: number;
+    currentSlideIndex: number;
+    isPlaying: boolean;
 };
 
 const initialSlidesState: SlidesSlice = {
-  slides: data,
-  direction: 0,
-  currentSlideIndex: 0,
-  isPlaying: false,
+    slides: data,
+    direction: 0,
+    currentSlideIndex: 0,
+    isPlaying: false,
 };
 
 const slidesSlice = createSlice({
-  name: "slideshow",
-  initialState: initialSlidesState,
-  reducers: {
-    setCurrentSlide: (state, action: PayloadAction<number>) => {
-      state.currentSlideIndex = action.payload;
+    name: "slideshow",
+    initialState: initialSlidesState,
+    reducers: {
+        setCurrentSlide: (state, action: PayloadAction<number>) => {
+            state.currentSlideIndex = action.payload;
+        },
+        paginate: (state, action: PayloadAction<number>) => {
+            const direction = action.payload;
+            if (direction > 0) {
+                state.currentSlideIndex = (state.currentSlideIndex + 1) % state.slides.length;
+            } else {
+                state.currentSlideIndex = (state.currentSlideIndex - 1 + state.slides.length) % state.slides.length;
+            }
+            state.direction = direction;
+        },
+        toggleIsPlaying: state => {
+            state.isPlaying = !state.isPlaying;
+        },
+        resetSlider: state => {
+            state.currentSlideIndex = 0;
+            state.direction = 0;
+            state.isPlaying = false;
+        },
     },
-    paginate: (state, action: PayloadAction<number>) => {
-      const direction = action.payload;
-      if (direction > 0) {
-        state.currentSlideIndex = (state.currentSlideIndex + 1) % state.slides.length;
-      } else {
-        state.currentSlideIndex = (state.currentSlideIndex - 1 + state.slides.length) % state.slides.length;
-      }
-      state.direction = direction;
-    },
-    toggleIsPlaying: state => {
-      state.isPlaying = !state.isPlaying;
-    },
-    resetSlider: state => {
-      state.currentSlideIndex = 0;
-      state.direction = 0;
-      state.isPlaying = false;
-    },
-  },
 });
 
 export const numberOfSlides = (state: RootState): number => state.slideshow.slides.length;
