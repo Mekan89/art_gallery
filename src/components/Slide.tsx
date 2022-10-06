@@ -23,7 +23,7 @@ export default function Slide({ setShow }: { setShow: (state: boolean) => void }
                 duration: 0.8,
                 ease: "easeInOut",
             }}
-            className="flex flex-col flex-grow h-auto lg:h-[63rem] py-12 overflow-hidden lg:px-4 xl:px-0 xl:flex-row xl:justify-between">
+            className="flex flex-col flex-grow h-auto lg:h-[63rem] py-12 overflow-hidden  lg:px-4 xl:px-0 xl:flex-row xl:justify-between">
             <div className="flex">
                 <div>
                     <motion.div
@@ -58,10 +58,10 @@ export default function Slide({ setShow }: { setShow: (state: boolean) => void }
             </div>
 
             <div className="relative z-10 mt-44 md:mt-32 xl:max-w-md h-fit">
-                <div className="-z-10 text-[8rem] md:text-[10rem] font-bold text-gray-100 lg:-left-38 xl:left-auto  absolute -top-24 lg:-top-32 xl:right-0">
+                <div className="-z-10 text-[8rem] md:text-[10rem] font-bold text-gray-100 lg:-left-38 xl:left-auto  absolute -top-28 lg:-top-32 xl:right-0">
                     {year}
                 </div>
-                <h6 className=" md:px-5  sm:text-lg  lg:text-base  text-[#7d7d7d] tracking-wider ">{description}</h6>
+                <h6 className=" md:px-5    text-[#7d7d7d] tracking-wider ">{description}</h6>
                 <a
                     href={source}
                     className="block text-xs tracking-wide font-bold text-[#7d7d7d] underline uppercase pt-8 xl:pt-20 md:pl-4 hover:text-black"

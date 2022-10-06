@@ -13,8 +13,8 @@ const SlideFooter = () => {
             <ProgressBar />
             <div className="flex items-center justify-between mt-6">
                 <div className="space-y-2">
-                    <h3>{name}</h3>
-                    <h5>{artist.name}</h5>
+                    <h3 className="font-bold">{name}</h3>
+                    <p className="text-sm">{artist.name}</p>
                 </div>
                 <div className="flex justify-between w-20">
                     <ArrowBack onClick={() => dispatch(paginate(-1))} />
